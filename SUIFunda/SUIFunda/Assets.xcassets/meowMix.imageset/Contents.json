@@ -2,18 +2,7 @@
   "images" : [
     {
       "filename" : "soymilk.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "sausages.jpeg",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "milk.jpeg",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     }
   ],
   "info" : {
