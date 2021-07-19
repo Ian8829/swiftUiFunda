@@ -8,34 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
-    let mix = MeowMix()
+	let mix = MeowMix()
+	@State private var showMessage = false
     
-    var body: some View {
-			NavigationView {
-				VStack(spacing: 0) {
-							MeowMixHeader()
-									.padding()
+	var body: some View {
+		NavigationView {
+			VStack(spacing: 0) {
+					MeowMixHeader()
+						.padding()
+						.onTapGesture {
+							showMessage = true
+						}
+//						.popover(isPresented: $showMessage, content: {
+//							print("POPOVER!!")
+////							MessagePopover()
+//						})
+						
+						Divider()
+							.padding()
+						
+						List(mix.tracks) { track in
+							NavigationLink(
+								destination: DetailView(track: track.title),
+								label: {
+									TrackRow(track: track)
+								})
 							
-							Divider()
-									.padding()
-							
-							List(mix.tracks) { track in
-								NavigationLink(
-									destination: DetailView(track: track.title),
-									label: {
-										TrackRow(track: track)
-									})
-								
-							}
-							
-							FeaturedCats(artists: mix.tracks.map(\.artist))
-									.padding(.vertical)
-									.background(Color.gray.opacity(0.2))
-				}
-				.navigationBarHidden(true)
+						}
+						
+						FeaturedCats(artists: mix.tracks.map(\.artist))
+								.padding(.vertical)
+								.background(Color.gray.opacity(0.2))
 			}
-			.navigationViewStyle(StackNavigationViewStyle())
-    }
+			.navigationBarHidden(true)
+		}
+		.navigationViewStyle(StackNavigationViewStyle())
+	}
 }
 
 struct FeaturedCats: View {
