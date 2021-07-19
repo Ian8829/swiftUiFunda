@@ -11,19 +11,30 @@ struct ContentView: View {
     let mix = MeowMix()
     
     var body: some View {
-        VStack(spacing: 0) {
-            MeowMixHeader()
-                .padding()
-            
-            Divider()
-                .padding()
-            
-            List(mix.tracks) { track in TrackRow(track: track) }
-            
-            FeaturedCats(artists: mix.tracks.map(\.artist))
-                .padding(.vertical)
-                .background(Color.gray.opacity(0.2))
-        }
+			NavigationView {
+				VStack(spacing: 0) {
+							MeowMixHeader()
+									.padding()
+							
+							Divider()
+									.padding()
+							
+							List(mix.tracks) { track in
+								NavigationLink(
+									destination: DetailView(track: track.title),
+									label: {
+										TrackRow(track: track)
+									})
+								
+							}
+							
+							FeaturedCats(artists: mix.tracks.map(\.artist))
+									.padding(.vertical)
+									.background(Color.gray.opacity(0.2))
+				}
+				.navigationBarHidden(true)
+			}
+			.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
