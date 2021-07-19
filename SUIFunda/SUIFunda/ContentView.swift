@@ -56,6 +56,37 @@ struct TrackRow: View {
   }
 }
 
+struct FeaturedArtist: View {
+    let artist: String
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                Circle()
+                    .fill(
+                        [
+                            Color.orange,
+                            .pink,
+                            .purple,
+                            .red,
+                            .yellow
+                        ].randomElement()!)
+                    .scaledToFit()
+                
+                Image(systemName: "music.mic")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(.white)
+            }
+            
+            Text(artist)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+        }
+        .frame(width: 120)
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -67,6 +98,9 @@ struct ContentView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
         
         TrackRow(track: mix.tracks.first!)
+            .previewLayout(.sizeThatFits)
+        
+        FeaturedArtist(artist: "Keyboard Cat")
             .previewLayout(.sizeThatFits)
 
     }
