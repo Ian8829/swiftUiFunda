@@ -32,6 +32,30 @@ struct FeaturedCats: View {
     }
 }
 
+struct TrackRow: View {
+  let track: Track
+  
+  var body: some View {
+    HStack {
+      track.thumbnail
+        .padding()
+        .background(track.gradient)
+        .cornerRadius(6)
+      
+      Text(track.title)
+        
+      Text(track.artist)
+        .foregroundColor(.secondary)
+        .lineLimit(1)
+        .truncationMode(.tail)
+      
+      Spacer()
+      
+      Text("\(track.duration)")
+    }
+  }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -40,6 +64,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
         
         FeaturedCats(artists: mix.tracks.map(\.artist))
+            .previewLayout(.sizeThatFits)
+        
+        TrackRow(track: mix.tracks.first!)
             .previewLayout(.sizeThatFits)
 
     }
