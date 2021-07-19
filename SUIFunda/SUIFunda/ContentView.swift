@@ -9,16 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack(alignment: .bottom, spacing: 20.0) {
-            Thumbnail()
-            
-            VStack {
-                MixDescription()
-                Buttons()
+        VStack {
+            HStack(alignment: .bottom, spacing: 20.0) {
+                Thumbnail()
+                
+                VStack {
+                    MixDescription()
+                    Buttons()
+                }
             }
+            .padding()
+            .frame(minHeight: 150, maxHeight: 250)
+            
+            Spacer()
         }
-        .padding()
-        .frame(minHeight: 150, maxHeight: 250)
     }
 }
 
