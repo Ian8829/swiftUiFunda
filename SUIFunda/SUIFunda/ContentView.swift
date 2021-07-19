@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var swiftyColor: Color = .red
+    @State var swiftyOpacity: Double = 0.7
+    
     var body: some View {
         VStack {
+            ColorPicker("Swifty Color", selection: $swiftyColor)
+            
+            Slider(value: $swiftyOpacity, in: 0...1)
+                .accentColor(swiftyColor)
+            
             Image(systemName: "swift")
                 .resizable()
-                .frame(width: 100.0, height: 100.0)
-                .background(Color.orange)
-                .padding([.leading, .bottom, .trailing])
-            
-            Text("Hello, world!")
-                .fontWeight(.bold)
-                .kerning(5.0)
-                .padding()
+                .scaledToFit()
+                .padding(25)
+                .foregroundColor(.white)
+                .opacity(swiftyOpacity)
+                .background(swiftyColor)
+                .cornerRadius(50)
         }
+        .padding(20)
     }
 }
 
