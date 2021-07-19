@@ -8,46 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var swiftyColor: Color = .red
-    @State private var swiftyOpacity: Double = 0.7
-    
     var body: some View {
         VStack {
-            SwiftyControls(
-                swiftyColor: $swiftyColor,
-                swiftyOpacity: $swiftyOpacity
-            )
+            Text("Meow! Mix")
+                .font(.title)
+                .fontWeight(.semibold)
             
-            Image(systemName: "swift")
-                .resizable()
-                .scaledToFit()
-                .padding(25)
-                .foregroundColor(.white)
-                .opacity(swiftyOpacity)
-                .background(swiftyColor)
-                .cornerRadius(50)
-        }
-        .padding(20)
-    }
-}
-
-struct SwiftyControls: View {
-    @Binding var swiftyColor: Color
-    @Binding var swiftyOpacity: Double
-
-    var body: some View {
-        VStack {
-            ColorPicker("Swifty Color", selection: $swiftyColor)
+            Text("Apple Music for Ozma")
+                .font(.title)
+                .fontWeight(.light)
+                .foregroundColor(.accentColor)
             
-            Slider(value: $swiftyOpacity, in: 0...1)
-                .accentColor(swiftyColor)
+            Text("Updated Caturday")
+                .font(Font.system(.body).smallCaps())
+            
+            Text("Whether you're a kitten or an old-timer, get meowing with this purrsonalized mix of music to meow to!")
+                
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        Image("meowMix")
+            .resizable()
+            .frame(maxHeight: 250)
+            .previewLayout(.sizeThatFits)
+            
+        
         ContentView()
     }
 }
