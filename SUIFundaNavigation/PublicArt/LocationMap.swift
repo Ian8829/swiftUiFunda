@@ -36,11 +36,16 @@ import MapKit
 struct LocationMap: View {
   var artwork: Artwork
   @State var region = MKCoordinateRegion()
+	@Binding var showModal: Bool
 
   var body: some View {
     VStack {
       HStack {
         Text(self.artwork.locationName)
+				
+				Spacer()
+				
+				Button("Done") { showModal = false }
       }
       .padding()
       
@@ -57,6 +62,6 @@ struct LocationMap: View {
 
 struct LocationMap_Previews: PreviewProvider {
   static var previews: some View {
-    LocationMap(artwork: artData[0])
+		LocationMap(artwork: artData[0], showModal: .constant(true))
   }
 }

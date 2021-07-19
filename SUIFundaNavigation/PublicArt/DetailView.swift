@@ -52,9 +52,10 @@ struct DetailView: View {
             .font(.headline)
         }
       }
-			.sheet(isPresented: $showMap) {
-				LocationMap(artwork: artwork)
+			.fullScreenCover(isPresented: $showMap) {
+				LocationMap(artwork: artwork, showModal: $showMap)
 			}
+			
       
       Text("Artist: \(artwork.artist)")
         .font(.subheadline)
