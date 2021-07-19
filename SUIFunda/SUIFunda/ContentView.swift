@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let mix = MeowMix()
+    
     var body: some View {
         VStack {
             MeowMixHeader()
@@ -16,6 +18,7 @@ struct ContentView: View {
             Divider()
                 .padding()
             
+            List(mix.tracks) { track in TrackRow(track: track) }
         }
     }
 }
