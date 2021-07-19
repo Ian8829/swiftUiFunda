@@ -47,6 +47,8 @@ struct ContentView: View {
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Artworks")
+        
+        DetailView(artwork: artworks[0])
     }
   }
 }
