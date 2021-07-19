@@ -14,6 +14,7 @@
 		B332D2CF26A54A1600554AC9 /* SUIFundaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332D2CE26A54A1600554AC9 /* SUIFundaTests.swift */; };
 		B332D2DA26A54A1600554AC9 /* SUIFundaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332D2D926A54A1600554AC9 /* SUIFundaUITests.swift */; };
 		B332D2E826A56C8400554AC9 /* MeowMix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332D2E726A56C8400554AC9 /* MeowMix.swift */; };
+		B332D2EA26A56DCE00554AC9 /* MeowMixHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332D2E926A56DCE00554AC9 /* MeowMixHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B332D2D926A54A1600554AC9 /* SUIFundaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIFundaUITests.swift; sourceTree = "<group>"; };
 		B332D2DB26A54A1600554AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B332D2E726A56C8400554AC9 /* MeowMix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowMix.swift; sourceTree = "<group>"; };
+		B332D2E926A56DCE00554AC9 /* MeowMixHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowMixHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				B332D2C526A54A1600554AC9 /* Info.plist */,
 				B332D2C226A54A1600554AC9 /* Preview Content */,
 				B332D2E726A56C8400554AC9 /* MeowMix.swift */,
+				B332D2E926A56DCE00554AC9 /* MeowMixHeader.swift */,
 			);
 			path = SUIFunda;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B332D2E826A56C8400554AC9 /* MeowMix.swift in Sources */,
+				B332D2EA26A56DCE00554AC9 /* MeowMixHeader.swift in Sources */,
 				B332D2BF26A54A1300554AC9 /* ContentView.swift in Sources */,
 				B332D2BD26A54A1300554AC9 /* SUIFundaApp.swift in Sources */,
 			);
